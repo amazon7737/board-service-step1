@@ -21,4 +21,9 @@ public class UserService {
 
         return LoginedUser.of(user, authority);
     }
+
+    public void signup(String username, String email, String password) {
+        // TODO: Password encryption is needed
+        userRepository.save(username, email, password);
+    }
 }

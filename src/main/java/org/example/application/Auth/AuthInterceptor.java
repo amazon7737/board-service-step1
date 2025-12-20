@@ -16,19 +16,14 @@ public class AuthInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String uri = request.getRequestURI();
-        
-
-
         LoginedUser user = sessionManager.validate();
 
-        // Swagger protection for ADMIN only
         if (uri.startsWith("/swagger-ui") || uri.startsWith("/v3/api-docs")) {
             if (user == null || !"ADMIN".equals(user.role())) {
                 response.sendError(HttpServletResponse.SC_FORBIDDEN, "Access Denied");
                 return false;
             }
         }
-        
         return true;
     }
 }
