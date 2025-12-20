@@ -20,6 +20,53 @@ public class Comment {
         this.createdAt = createdAt;
     }
 
+    public static CommentBuilder builder() {
+        return new CommentBuilder();
+    }
+
+    public static class CommentBuilder {
+        private Long id;
+        private Long postId;
+        private Long userId;
+        private Long parentId;
+        private String content;
+        private LocalDateTime createdAt;
+
+        public CommentBuilder id(Long id) {
+            this.id = id;
+            return this;
+        }
+
+        public CommentBuilder postId(Long postId) {
+            this.postId = postId;
+            return this;
+        }
+
+        public CommentBuilder userId(Long userId) {
+            this.userId = userId;
+            return this;
+        }
+
+        public CommentBuilder parentId(Long parentId) {
+            this.parentId = parentId;
+            return this;
+        }
+
+        public CommentBuilder content(String content) {
+            this.content = content;
+            return this;
+        }
+
+        public CommentBuilder createdAt(LocalDateTime createdAt) {
+            this.createdAt = createdAt;
+            return this;
+        }
+
+        public Comment build() {
+            return new Comment(id, postId, userId, parentId, content, createdAt);
+        }
+    }
+
     public Long getId() {
         return id;
     }
