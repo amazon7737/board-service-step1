@@ -19,5 +19,9 @@ public class PostFinder {
     public List<Post> findByUserId(Long userId, String sort) {
         return postRepository.findByUserId(userId, sort);
     }
+
+    public Post findById(Long id) {
+        return postRepository.findById(id).orElseThrow(() -> new RuntimeException("Post not found"));
+    }
     
 }

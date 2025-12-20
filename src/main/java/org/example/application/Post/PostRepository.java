@@ -79,4 +79,11 @@ public class PostRepository {
                 title, content, id
         );
     }
+
+    public void deleteById(Long id) {
+        jdbcTemplate.update(
+                "DELETE FROM posts WHERE id = ?",
+                id
+        );
+    }
 }

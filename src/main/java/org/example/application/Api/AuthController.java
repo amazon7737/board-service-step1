@@ -30,4 +30,10 @@ public class AuthController {
         sessionManager.logout();
         return "Logout Successful";
     }
+
+    @PostMapping("/signup")
+    public String signup(@org.springframework.web.bind.annotation.RequestBody org.example.application.Api.dto.UserSignupRequestDto request) {
+        userService.signup(request.getUsername(), request.getEmail(), request.getPassword());
+        return "Signup Successful";
+    }
 }
