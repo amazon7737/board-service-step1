@@ -17,6 +17,47 @@ public class User {
         this.createdAt = createdAt;
     }
 
+    public static UserBuilder builder() {
+        return new UserBuilder();
+    }
+
+    public static class UserBuilder {
+        private Long id;
+        private String password;
+        private String name;
+        private String email;
+        private LocalDateTime createdAt;
+
+        public UserBuilder id(Long id) {
+            this.id = id;
+            return this;
+        }
+
+        public UserBuilder password(String password) {
+            this.password = password;
+            return this;
+        }
+
+        public UserBuilder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public UserBuilder email(String email) {
+            this.email = email;
+            return this;
+        }
+
+        public UserBuilder createdAt(LocalDateTime createdAt) {
+            this.createdAt = createdAt;
+            return this;
+        }
+
+        public User build() {
+            return new User(id, password, name, email, createdAt);
+        }
+    }
+
     public Long getId() {
         return id;
     }

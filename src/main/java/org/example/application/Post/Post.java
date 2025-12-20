@@ -17,6 +17,47 @@ public class Post {
         this.createdAt = createdAt;
     }
 
+    public static PostBuilder builder() {
+        return new PostBuilder();
+    }
+
+    public static class PostBuilder {
+        private Long id;
+        private Long userId;
+        private String title;
+        private String content;
+        private LocalDateTime createdAt;
+
+        public PostBuilder id(Long id) {
+            this.id = id;
+            return this;
+        }
+
+        public PostBuilder userId(Long userId) {
+            this.userId = userId;
+            return this;
+        }
+
+        public PostBuilder title(String title) {
+            this.title = title;
+            return this;
+        }
+
+        public PostBuilder content(String content) {
+            this.content = content;
+            return this;
+        }
+
+        public PostBuilder createdAt(LocalDateTime createdAt) {
+            this.createdAt = createdAt;
+            return this;
+        }
+
+        public Post build() {
+            return new Post(id, userId, title, content, createdAt);
+        }
+    }
+
     public Long getId() {
         return id;
     }

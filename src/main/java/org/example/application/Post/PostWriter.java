@@ -36,10 +36,10 @@ public class PostWriter {
     @Transactional
     public void update(Long postId, Long userId, String title, String content, List<Long> categoryIds) {
         Post post = postRepository.findById(postId)
-                .orElseThrow(() -> new RuntimeException("Post not found"));
+                .orElseThrow(() -> new org.example.application.Common.Exception.EntityNotFoundException("Post", postId));
 
         if (!post.getUserId().equals(userId)) {
-            throw new RuntimeException("Permission denied: You can only edit your own posts");
+            throw new org.example.application.Common.Exception.UnauthorizedAccessException("Permission denied: You can only edit your own posts");
         }
 
         postRepository.update(postId, title, content);
@@ -55,10 +55,10 @@ public class PostWriter {
     @Transactional
     public void delete(Long postId, Long userId) {
         Post post = postRepository.findById(postId)
-                .orElseThrow(() -> new RuntimeException("Post not found"));
+                .orElseThrow(() -> new org.example.application.Common.Exception.EntityNotFoundException("Post", postId));
 
         if (!post.getUserId().equals(userId)) {
-            throw new RuntimeException("Permission denied: You can only delete your own posts");
+            throw new org.example.application.Common.Exception.UnauthorizedAccessException("Permission denied: You can only delete your own posts");
         }
 
         commentRepository.deleteByPostId(postId);

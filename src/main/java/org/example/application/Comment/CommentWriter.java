@@ -15,7 +15,7 @@ public class CommentWriter {
     public void write(Long postId, Long userId, Long parentId, String content) {
         if (parentId != null) {
             commentRepository.findById(parentId)
-                    .orElseThrow(() -> new RuntimeException("Parent comment not found"));
+                    .orElseThrow(() -> new org.example.application.Common.Exception.EntityNotFoundException("Parent Comment", parentId));
         }
         commentRepository.save(postId, userId, parentId, content);
     }
@@ -23,10 +23,10 @@ public class CommentWriter {
     @Transactional
     public void update(Long commentId, Long userId, String content) {
         Comment comment = commentRepository.findById(commentId)
-                .orElseThrow(() -> new RuntimeException("Comment not found"));
+                .orElseThrow(() -> new org.example.application.Common.Exception.EntityNotFoundException("Comment", commentId));
 
         if (!comment.getUserId().equals(userId)) {
-            throw new RuntimeException("Permission denied: You can only edit your own comments");
+            throw new org.example.application.Common.Exception.UnauthorizedAccessException("Permission denied: You can only edit your own comments");
         }
 
         commentRepository.updateContent(commentId, content);
@@ -35,10 +35,10 @@ public class CommentWriter {
     @Transactional
     public void delete(Long commentId, Long userId) {
         Comment comment = commentRepository.findById(commentId)
-                .orElseThrow(() -> new RuntimeException("Comment not found"));
+                .orElseThrow(() -> new org.example.application.Common.Exception.EntityNotFoundException("Comment", commentId));
 
         if (!comment.getUserId().equals(userId)) {
-            throw new RuntimeException("Permission denied: You can only delete your own comments");
+            throw new org.example.application.Common.Exception.UnauthorizedAccessException("Permission denied: You can only delete your own comments");
         }
 
         commentRepository.deleteById(commentId);
