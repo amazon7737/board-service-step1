@@ -45,4 +45,11 @@ public class BookmarkRepository {
                 userId, postId
         );
     }
+
+    public void deleteByPostId(Long postId) {
+        jdbcTemplate.update(
+                "DELETE FROM bookmarks WHERE post_id = ?",
+                postId
+        );
+    }
 }
