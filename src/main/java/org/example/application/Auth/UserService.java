@@ -23,7 +23,7 @@ public class UserService {
     }
 
     public void signup(String username, String email, String password) {
-        // TODO: Password encryption is needed
+        // TODO: 비밀번호 암호화 필요
         userRepository.save(username, email, password);
     }
 }

@@ -4,10 +4,12 @@ import org.example.application.Auth.LoginedUser;
 import org.example.application.Auth.SessionManager;
 import org.example.application.Auth.UserService;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
+@RequestMapping("/api")
 public class AuthController {
 
     private final UserService userService;

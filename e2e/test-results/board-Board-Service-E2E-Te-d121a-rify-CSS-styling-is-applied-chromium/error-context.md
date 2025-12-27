@@ -1,0 +1,84 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "게시판 서비스" [ref=e4] [cursor=pointer]:
+        - /url: /board
+      - generic [ref=e5]:
+        - list [ref=e6]:
+          - listitem [ref=e7]:
+            - link "게시글" [ref=e8] [cursor=pointer]:
+              - /url: /board
+        - generic [ref=e9]:
+          - link "로그인" [ref=e10] [cursor=pointer]:
+            - /url: /login
+          - link "회원가입" [ref=e11] [cursor=pointer]:
+            - /url: /signup
+  - generic [ref=e12]:
+    - heading "최신 게시글" [level=2] [ref=e14]
+    - generic [ref=e15]:
+      - generic [ref=e18]:
+        - generic [ref=e19]:
+          - heading "Spring JdbcTemplate 정리" [level=5] [ref=e20]:
+            - link "Spring JdbcTemplate 정리" [ref=e21] [cursor=pointer]:
+              - /url: /board/1;jsessionid=9914043AF2FF2BB219F4216776E17B18
+          - generic [ref=e22]: 2025-12-16 15:20
+        - paragraph [ref=e23]: JdbcTemplate 기본 사용법을 정리합니다.
+        - generic [ref=e24]:
+          - generic [ref=e25]: "작성자: 1"
+          - generic [ref=e26]: 더보기 →
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - heading "JPA vs JDBC" [level=5] [ref=e31]:
+            - link "JPA vs JDBC" [ref=e32] [cursor=pointer]:
+              - /url: /board/2;jsessionid=9914043AF2FF2BB219F4216776E17B18
+          - generic [ref=e33]: 2025-12-16 15:20
+        - paragraph [ref=e34]: JPA와 JDBC의 차이를 비교해봅니다.
+        - generic [ref=e35]:
+          - generic [ref=e36]: "작성자: 2"
+          - generic [ref=e37]: 더보기 →
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - heading "대댓글 구조 설계" [level=5] [ref=e42]:
+            - link "대댓글 구조 설계" [ref=e43] [cursor=pointer]:
+              - /url: /board/3;jsessionid=9914043AF2FF2BB219F4216776E17B18
+          - generic [ref=e44]: 2025-12-16 15:20
+        - paragraph [ref=e45]: 댓글과 대댓글을 어떻게 설계할까?
+        - generic [ref=e46]:
+          - generic [ref=e47]: "작성자: 3"
+          - generic [ref=e48]: 더보기 →
+      - generic [ref=e51]:
+        - generic [ref=e52]:
+          - heading "ERD 설계 팁" [level=5] [ref=e53]:
+            - link "ERD 설계 팁" [ref=e54] [cursor=pointer]:
+              - /url: /board/4;jsessionid=9914043AF2FF2BB219F4216776E17B18
+          - generic [ref=e55]: 2025-12-16 15:20
+        - paragraph [ref=e56]: 게시판 ERD 설계시 주의점
+        - generic [ref=e57]:
+          - generic [ref=e58]: "작성자: 1"
+          - generic [ref=e59]: 더보기 →
+      - generic [ref=e62]:
+        - generic [ref=e63]:
+          - heading "인덱스 최적화" [level=5] [ref=e64]:
+            - link "인덱스 최적화" [ref=e65] [cursor=pointer]:
+              - /url: /board/5;jsessionid=9914043AF2FF2BB219F4216776E17B18
+          - generic [ref=e66]: 2025-12-16 15:20
+        - paragraph [ref=e67]: DB 인덱스 튜닝 경험 공유
+        - generic [ref=e68]:
+          - generic [ref=e69]: "작성자: 4"
+          - generic [ref=e70]: 더보기 →
+      - generic [ref=e73]:
+        - generic [ref=e74]:
+          - heading "북마크 기능 구현" [level=5] [ref=e75]:
+            - link "북마크 기능 구현" [ref=e76] [cursor=pointer]:
+              - /url: /board/6;jsessionid=9914043AF2FF2BB219F4216776E17B18
+          - generic [ref=e77]: 2025-12-16 15:20
+        - paragraph [ref=e78]: 북마크 설계와 주의점
+        - generic [ref=e79]:
+          - generic [ref=e80]: "작성자: 5"
+          - generic [ref=e81]: 더보기 →
+  - contentinfo [ref=e82]:
+    - generic [ref=e83]: © 2025 Board Service. All rights reserved.
+```
